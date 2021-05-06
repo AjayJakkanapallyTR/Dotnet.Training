@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="billcalc.css" type="text/css" media="all" />
+    </head>
+    <body>
+        <h1>Bill Calculator</h1>
+        <form onsubmit="return totalPriceCalculationOnclick();">
+            <table>
+                <tr>
+                    <td><label for="productName">Product Name</label></td>
+                    <td><input type="text" name="" id="productName" value="" placeholder="Product Name" required="true"/></td>
+                </tr>
+                <tr>
+                    <td><label for="price">Product Price in Rs.</label></td>
+                    <td><input type="number" name="" id="price" value="" placeholder="Product Price" required="true"/></td>
+                </tr>
+                <tr>
+                    <td><label for="qty">Quantity</label></td>
+                    <td><input type="number" name="" id="qty" value="" min="1" placeholder="Enter quantity" required="true"/></td>
+                </tr>
+                <tr>
+                    <td><label for="totalprice">Total Price in Rs.</label></td>
+                    <td><output id="totalprice" for="price qty"></output></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" id="submit" value="Submit"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+       <script type="text/javascript" charset="utf-8">
+             function totalPriceCalculationOnclick(){
+                 var p=document.getElementById("Price").value;
+                 var q=document.getElementById("qty").value;
+                 var res=parseInt(p)*parseInt(q);
+                 document.getElementById("totalprice").innerHTML=res.toString();
+                 return false;
+             }
+ </script>
+    </body>
+</html>
